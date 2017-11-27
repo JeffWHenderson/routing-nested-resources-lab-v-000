@@ -1,7 +1,7 @@
 class SongsController < ApplicationController
   def index
     @songs = Song.all
-    raise params.inspect
+    raise  Artist.find(params[:artist_id]).songs.inspect
     if !!params[:artist_id]
       @artist = Artist.find(params[:artist_id]).songs
       redirect_to artist_song_path(@artist, @song)
