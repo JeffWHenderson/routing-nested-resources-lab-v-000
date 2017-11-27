@@ -1,6 +1,7 @@
 class SongsController < ApplicationController
   def index
     @songs = Song.all
+    raise params.inspect
     if !!params[:artist_name]
       raise params.inpsect
       @artist = Artist.find(params[:artist_name]).songs
