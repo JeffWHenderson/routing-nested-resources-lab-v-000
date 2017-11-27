@@ -3,6 +3,7 @@ class SongsController < ApplicationController
     @songs = Song.all
     if params[:artist_id]
       @artist = Artist.find(params[:artist_id]).songs
+      raise @artist.inspect
       redirect_to artist_song_path(@artist, @song)
     else
       @songs = Song.all
